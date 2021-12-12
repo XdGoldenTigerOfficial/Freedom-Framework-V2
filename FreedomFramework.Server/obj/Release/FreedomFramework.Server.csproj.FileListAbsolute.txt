@@ -1,0 +1,8 @@
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\Freedom Framework V2\FreedomFramework.Server\obj\Release\FreedomFramework.Server.csproj.AssemblyReference.cache
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\Freedom Framework V2\FreedomFramework.Server\obj\Release\FreedomFramework.Server.csproj.CoreCompileInputs.cache
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server Build\FreedomFramework.Server.net.dll.config
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server Build\FreedomFramework.Server.net.dll
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server Build\FreedomFramework.Server.net.pdb
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server\obj\Release\FreedomFramework.Server.csproj.CoreCompileInputs.cache
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server\obj\Release\FreedomFramework.Server.net.dll
+F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server\obj\Release\FreedomFramework.Server.net.pdb
