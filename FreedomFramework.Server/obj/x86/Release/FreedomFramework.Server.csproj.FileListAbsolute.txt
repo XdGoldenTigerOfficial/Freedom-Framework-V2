@@ -1,2 +1,0 @@
-F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server\obj\x86\Release\FreedomFramework.Server.csproj.AssemblyReference.cache
-F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Server\obj\x86\Release\FreedomFramework.Server.csproj.CoreCompileInputs.cache
