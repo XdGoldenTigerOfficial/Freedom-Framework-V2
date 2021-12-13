@@ -5,7 +5,7 @@
 
 
 #### Freedom Framework V2 Links
-- Development Board: https://trello.com/b/nQ8rCb7C/freedom-framework-v2
+- Development Board (Trello): https://trello.com/b/nQ8rCb7C/freedom-framework-v2
 
 
 #### Golden Development Links
