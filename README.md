@@ -3,5 +3,6 @@
 
 
 
-##### Links
-
+##### Freedom Framework V2 Links
+- Development Board: https://trello.com/b/nQ8rCb7C/freedom-framework-v2
+- Our Discord Server: https://discord.gg/grH6T6YhzR
