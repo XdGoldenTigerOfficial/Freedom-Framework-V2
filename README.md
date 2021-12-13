@@ -1,1 +1,2 @@
-# Freedom-Framework-V2
+# Freedom Framework V2
+## Original Developer of Freedom Framework: `AbelGaming#9428`
