@@ -7,5 +7,6 @@
 - Development Board: https://trello.com/b/nQ8rCb7C/freedom-framework-v2
 
 
+
 #### Golden Development
 - Our Discord Server: https://discord.gg/grH6T6YhzR
