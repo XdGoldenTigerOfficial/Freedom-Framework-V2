@@ -11,27 +11,35 @@ namespace server
     {
         public Main()
         {
-            //Database
-            Database.Initialize();
-
-            //Internal Events
-            EventHandlers["playerConnecting"] += new Action<Player, string, dynamic, dynamic>(OnPlayerConnecting);
-
-            //Framework Events
-            EventHandlers["Freedom:GetPlayerInfo"] += new Action<Player>(GetPlayerInfo);
-            EventHandlers["Freedom:GetPlayerInventory"] += new Action<Player>(GetPlayerInventory);
-            EventHandlers["Freedom:SavePlayerData"] += new Action<Player, string, string, string, string, string, string>(SavePlayerData);
-            EventHandlers["Freedom:SendPlayerJobUpdate"] += new Action<Player, string>(UpdatePlayerJob);
-            EventHandlers["Freedom:PayPlayer"] += new Action<Player, Player, string>(PayPlayer);
-
-            //Bank Robbery Events
-            EventHandlers["Freedom:BankRobberyStarting"] += new Action<string>(BankRobberyStarting);
-            EventHandlers["Freedom:BankRobberyComplete"] += new Action<string>(BankRobberyComplete);
-
-            //Ticket Event
-            EventHandlers["Freedom:IssueTicket"] += new Action<Player, Player, int>(IssueTicket);
+            Debug.WriteLine("[INFO] Freedom Framework V2 starting!");
         }
 
+        [EventHandler("onServerResourceStart")]
+        private void onServerResourceStart(string resourceName)
+        {
+            if (API.GetCurrentResourceName() != resourceName) return;
+
+            Debug.WriteLine(
+                "-------------------------------------------------------------------------------------------------------------------------------"
+            );
+
+            Debug.WriteLine(
+                " ____  ____  ____  ____  ____   __   _  _    ____  ____   __   _  _  ____  _  _   __  ____  __ _    _  _  ____    \n" +
+                "(  __)(  _ \\(  __)(  __)(    \\ /  \\ ( \\/ )  (  __)(  _ \\ / _\\ ( \\/ )(  __)/ )( \\ /  \\(  _ \\(  / )  / )( \\(___ \\  \n" +
+                " ) _)  )   / ) _)  ) _)  ) D ((  O )/ \\/ \\   ) _)  )   //    \\/ \\/ \\ ) _) \\ /\\ /(  O ))   / )  (   \\ \\/ / / __/    \n" +
+                "(__)  (__\\_)(____)(____)(____/ \\__/ \\_)(_/  (__)  (__\\_)\\_/\\_/\\_)(_/(____)(_/\\_) \\__/(__\\_)(__\\_)   \\__/ (____) "
+            );
+
+            Load.Config();
+
+            Debug.WriteLine("[SUCCESS] Freedom Framework V2 started successfully!");
+
+            Debug.WriteLine(
+                "-------------------------------------------------------------------------------------------------------------------------------"
+            );
+        }
+
+        [EventHandler("Freedom:IssueTicket")]
         private void IssueTicket([FromSource] Player player, Player TicketRecipient, int fine)
         {
             //Get Player Identifier
@@ -63,16 +71,19 @@ namespace server
             }
         }
 
+        [EventHandler("Freedom:BankRobberyStarting")]
         private void BankRobberyStarting(string street)
         {
             TriggerClientEvent("Freedom:BankRobberyStartingGlobal", street);
         }
 
+        [EventHandler("Freedom:BankRobberyComplete")]
         private void BankRobberyComplete(string street)
         {
             TriggerClientEvent("Freedom:BankRobberyCompleteGlobal", street);
         }
 
+        [EventHandler("Freedom:PayPlayer")]
         private void PayPlayer([FromSource] Player player, Player recipientid, string amount)
         {
             //Get Player Identifier
@@ -104,6 +115,7 @@ namespace server
             }
         }
 
+        [EventHandler("Freedom:SendPlayerJobUpdate")]
         private void UpdatePlayerJob([FromSource] Player player, string job)
         {
             //Get Player Identifier
@@ -128,6 +140,7 @@ namespace server
             player.TriggerEvent("Freedom:UpdatePlayerJob", GetJobSalary);
         }
 
+        [EventHandler("Freedom:SavePlayerData")]
         private void SavePlayerData([FromSource] Player player, string cash, string bank, string job, string colas, string water, string bread)
         {
             //Get Player Identifier
@@ -147,6 +160,7 @@ namespace server
             Database.Connection.Close();
         }
 
+        [EventHandler("Freedom:GetPlayerInventory")]
         private void GetPlayerInventory([FromSource] Player player)
         {
             //Get Player Identifier
@@ -192,6 +206,7 @@ namespace server
             player.TriggerEvent("Freedom:PlayerInventory", GetColas, GetWater, GetBread);
         }
 
+        [EventHandler("Freedom:GetPlayerInfo")]
         private void GetPlayerInfo([FromSource] Player player)
         {
             //Get Player Identifier
@@ -261,6 +276,7 @@ namespace server
             player.TriggerEvent("Freedom:PlayerInfo", GetPlayerCash, GetPlayerBank, GetPlayerAdmin, GetPlayerJob, GetJobSalary);
         }
 
+        [EventHandler("playerConnecting")]
         private async void OnPlayerConnecting([FromSource] Player player, string playerName, dynamic setKickReason, dynamic deferrals)
         {
             deferrals.defer();

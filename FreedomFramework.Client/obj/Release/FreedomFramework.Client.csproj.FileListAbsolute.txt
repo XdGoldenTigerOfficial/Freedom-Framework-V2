@@ -4,6 +4,5 @@ F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework
 F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client Build\FreedomFramework.Client.net.dll
 F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client Build\FreedomFramework.Client.net.pdb
 F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client\obj\Release\FreedomFramework.Client.csproj.AssemblyReference.cache
-F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client\obj\Release\FreedomFramework.Client.csproj.CopyComplete
 F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client\obj\Release\FreedomFramework.Client.net.dll
 F:\Golden Development\Pre-made Files\FiveM\Freedom Framework V2\FreedomFramework.Client\obj\Release\FreedomFramework.Client.net.pdb

@@ -11,8 +11,6 @@ namespace client
     {
         public Main()
         {
-            Debug.WriteLine("Freedom Framework Loaded");
-
             Tick += playerInfo;
             Tick += updateInfo;
         }
@@ -27,6 +25,7 @@ namespace client
                 int colas = Utilities.Constructors.Colas;
                 int water = Utilities.Constructors.Waters;
                 int bread = Utilities.Constructors.Bread;
+
                 TriggerServerEvent("Freedom:SavePlayerData", cash, bank, job, colas, water, bread);
                 await Delay(60000);
             }

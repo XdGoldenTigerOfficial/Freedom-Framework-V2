@@ -1,4 +1,6 @@
+using CitizenFX.Core;
 using MySqlConnector;
+using System;
 using System.Data;
 
 namespace server
@@ -11,14 +13,18 @@ namespace server
         {
             MySqlConnectionStringBuilder Builder = new MySqlConnectionStringBuilder
             {
-                Server = Config.Host,
-                Port = Config.Port,
-                UserID = Config.User,
-                Password = Config.Password,
-                Database = Config.Database
+                Server = Config.Load.Host,
+                Port = Config.Load.Port,
+                UserID = Config.Load.User,
+                Password = Config.Load.Password,
+                Database = Config.Load.Database
             };
 
             Connection = new MySqlConnection(Builder.ToString());
+
+            Connection.OpenAsync();
+            Connection.CloseAsync();
+            
         }
 
         public static MySqlDataReader ExecuteSelectQuery(string Sql)

@@ -11,17 +11,17 @@ namespace server.Apartment
     {
         public ApartmentMainServer()
         {
-            //Events
-            EventHandlers["Freedom:EnterHouse"] += new Action<Player>(EnterHouse);
-            EventHandlers["Freedom:ExitHouse"] += new Action<Player>(ExitHouse);
+
         }
 
+        [EventHandler("Freedom:ExitHouse")]
         private void ExitHouse([FromSource] Player player)
         {
             int playerID = int.Parse(player.Handle);
             TriggerClientEvent("Freedom:ExitHouseComplete", playerID);
         }
 
+        [EventHandler("Freedom:EnterHouse")]
         private void EnterHouse([FromSource] Player player)
         {
             int playerID = int.Parse(player.Handle);
