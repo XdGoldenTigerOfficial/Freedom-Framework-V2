@@ -20,7 +20,7 @@ namespace server.CEO
             var Identifier = player.Identifiers["license"];
             string playername = player.Name;
 
-            Database.ExecuteInsertQuery($"INSERT INTO ceo (Identifier, IsCEO, OrganizationName) VALUE ('{Identifier}', 'true', '{displayString}')");
+            Database.ExecuteQuery($"INSERT INTO ff_ceo (Identifier, IsCEO, OrganizationName) VALUE ('{Identifier}', 'true', '{displayString}')");
 
             TriggerClientEvent("Freedom:OrganizationCreated", displayString, playername);
         }

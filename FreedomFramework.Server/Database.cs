@@ -1,4 +1,6 @@
 using CitizenFX.Core;
+using static CitizenFX.Core.Native.API;
+using CitizenFX.Core.Native;
 using MySqlConnector;
 using System;
 using System.Data;
@@ -22,12 +24,23 @@ namespace server
 
             Connection = new MySqlConnection(Builder.ToString());
 
-            Connection.OpenAsync();
-            Connection.CloseAsync();
-            
+            try
+            {
+                MySqlDataReader data = SelectQuery("SELECT * FROM ff_users");
+            }
+            catch
+            {
+                var frameworkSQL = LoadResourceFile(GetCurrentResourceName(), GetResourceMetadata(GetCurrentResourceName(), "auto_sql_file", 0));
+
+                ExecuteQuery(frameworkSQL);
+
+                Debug.WriteLine("[INFO] Automatically created the tables in the Database!");
+            }
+
+            Connection.Close();
         }
 
-        public static MySqlDataReader ExecuteSelectQuery(string Sql)
+        public static MySqlDataReader SelectQuery(string Sql)
         {
             MySqlCommand Command = new MySqlCommand(Sql, Connection);
 
@@ -41,7 +54,7 @@ namespace server
             return Result;
         }
 
-        public static void ExecuteInsertQuery(string Sql)
+        public static void ExecuteQuery(string Sql)
         {
             MySqlCommand Command = new MySqlCommand(Sql, Connection);
 
@@ -53,11 +66,6 @@ namespace server
             Command.ExecuteNonQuery();
 
             Connection.Close();
-        }
-
-        public static void ExecuteUpdateQuery(string Sql)
-        {
-            ExecuteInsertQuery(Sql);
         }
     }
 }

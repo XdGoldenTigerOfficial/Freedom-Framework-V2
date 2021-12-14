@@ -96,13 +96,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="config.ini" />
+    <None Include="config\config.ini" />
+    <None Include="db/auto.sql" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="config.ini">
+    <None Update="config/config.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="db/auto.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db\auto.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
