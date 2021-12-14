@@ -266,7 +266,7 @@ namespace server
 
         private bool GetPlayerExistDB(string Identifier)
         {
-            MySqlDataReader Result = Database.SelectQuery($"SELECT ID FROM ff_users WHERE Identifier = '{Identifier}'");
+            MySqlDataReader Result = Database.SelectQuery($"SELECT Identifier FROM ff_users WHERE Identifier = '{Identifier}'");
 
             bool GetPlayerExistDB = false;
 

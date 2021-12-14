@@ -9,15 +9,16 @@ namespace client.Apartments
     {
         public ApartmentEvents()
         {
-            EventHandlers["Freedom:EnterHouseComplete"] += new Action<int>(EnteredHouse);
-            EventHandlers["Freedom:ExitHouseComplete"] += new Action<int>(ExitedHouse);
+            
         }
 
+        [EventHandler("Freedom:EnterHouseComplete")]
         private static void EnteredHouse(int playerID)
         {
             
         }
 
+        [EventHandler("Freedom:ExitHouseComplete")]
         private static void ExitedHouse(int playerID)
         {
             
